@@ -48,7 +48,7 @@ public class GenerateRender extends Render {
 			//generator.generatorSSH(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 			//generator.generatorjavaskweb(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 			//generator.generatorArk(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
-		
+			    
 		}
 		PlatformTool.compressToZipFile(outFilePath+"\\"+filedir, outFilePath +"\\" +filedir+".zip");
 		PlatformTool.deleteDir(outFilePath+"\\"+filedir);

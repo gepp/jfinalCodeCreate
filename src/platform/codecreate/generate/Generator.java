@@ -316,5 +316,53 @@ String outFilePath = outfilepath + "//" + filedir;
 	        
 	        
 	    }
+	   
+	   public static void generatorsuning(ConfigBasicInfo configBaseInfo, String filedir,String outfilepath,String project_name) {
+	        String outFilePath = outfilepath + "//" + filedir;
+	        String packagePath = configBaseInfo.getStr("PACKAGE_PATCH");
+	        String basePackagePath = packagePath.replace("","");
+	        basePackagePath = basePackagePath.replace(".", filesep);
+	        String ObjName = configBaseInfo.getStr("TABLE_OBJECT_NAME");
+	        String lowerCaseObjName = ObjName.toLowerCase();
+	        //lowerCaseObjName="";
+	        String firstLowObjName = PlatformTool.toFirstLowerString(ObjName);
+	        String tableName = configBaseInfo.getStr("ENGLISH_NAME");
+	        String ObjCN=configBaseInfo.getStr("SCENARIO_NAME");
+	        Map ctx = new HashMap();
+	        ctx.put("packagePath", packagePath);
+	        ctx.put("ObjName", ObjName);
+	        ctx.put("lowerCaseObjName", lowerCaseObjName);
+	        ctx.put("firstLowObjName", firstLowObjName);
+	        ctx.put("ObjCN", ObjCN);
+	        //ctx.put("jsPathObj", jsPathObj);
+	        ctx.put("tableName", tableName);
+	        ctx.put("configBasicExtendInfoList", configBaseInfo.getExtendList());
+	        ctx.put("basePackagePath", basePackagePath);
+	        ctx.put("projectName", project_name);
+	 
+	        String filePath = packagePath.replace(".", filesep);
+	        String modelPath=outFilePath + filesep + "ips-intf/src/main/java" + filesep + filePath + filesep +"entity/";
+	        String servicePath=outFilePath + filesep + "ips-intf/src/main/java" + filesep + filePath + filesep +"service/";
+	        String serviceImplPath=outFilePath + filesep + "ips-service/src/main/java" + filesep + filePath + filesep +"service/impl/";
+	        String sqlMapPath=outFilePath + filesep + "ips-service/src/main/resources/conf/sqlMap/";
+	        
+	        //String jspPath = outFilePath + filesep + "WebContent/WEB-INF/jsp" + filesep + basePackagePath + filesep + lowerCaseObjName + filesep;
+	        PlatformTool.createDirPath(modelPath);
+	        PlatformTool.createDirPath(servicePath);
+	        PlatformTool.createDirPath(serviceImplPath);
+	        PlatformTool.createDirPath(sqlMapPath);
+	        
+	        PlatformTool.generateFile("modelVM/suning/model.vm", ctx, modelPath + ObjName + ".java");
+	        PlatformTool.generateFile("modelVM/suning/service.vm", ctx, servicePath +ObjName+ "Service.java");
+	        PlatformTool.generateFile("modelVM/suning/serviceImpl.vm", ctx, serviceImplPath + ObjName+"ServiceImpl.java");
+	        PlatformTool.generateFile("modelVM/suning/sqlMap.vm", ctx, sqlMapPath + "sqlMap_"+lowerCaseObjName+".xml");
+
+//	      PlatformTool.generateFile("modelVM/js.vm", ctx, jsPath + aLObjName + ".js");
+//	      PlatformTool.generateFile("modelVM/flatBootstrap/jsp.vm", ctx, jspPath + lowerCaseObjName + ".jsp");
+//	      PlatformTool.generateFile("modelVM/flatBootstrap/jspadd.vm", ctx, jspPath + lowerCaseObjName + "_add" + ".jsp");
+//	      PlatformTool.generateFile("modelVM/flatBootstrap/jspmodify.vm", ctx, jspPath + lowerCaseObjName + "_modify.jsp");
+//	      PlatformTool.generateFile("modelVM/flatBootstrap/jspview.vm", ctx, jspPath + lowerCaseObjName + "_view.jsp");
+	     
+	    }
 
 }
