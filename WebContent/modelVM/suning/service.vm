@@ -1,0 +1,21 @@
+package ${packagePath}.service;
+import java.util.List;
+import java.util.Map;
+import ${packagePath}.entity.${ObjName};
+
+/**
+ * ${ObjCN} 
+ * @author 15060195
+ *
+ */
+public interface ${ObjName}Service{
+	 
+	 Map<String,Object> invoiceMap=new HashMap<String,Object>();
+	 #foreach (${element} in ${configBasicExtendInfoList})
+	 	invoiceMap.put("${element.FIRSTLOW_ENGLISH_NAME}",invoice.get${element.FIRSTUP_ENGLISH_NAME}());
+	 #end
+	 
+	 
+	 	 
+	 
+}

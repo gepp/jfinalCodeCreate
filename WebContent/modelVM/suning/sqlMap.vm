@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sqlMap namespace="${lowerCaseObjName}">
+	 SELECT 
+	   #foreach (${element} in ${configBasicExtendInfoList})
+	   		${element.FIELD_ENGLISH_NAME},
+	   #end
+	   FROM ${tableName}
+</sqlMap>

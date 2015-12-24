@@ -1,0 +1,24 @@
+package ${packagePath}.service.impl;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
+import com.suning.framework.dal.client.DalClient;
+import ${packagePath}.entity.${ObjName};
+import ${packagePath}.service.${ObjName}Service;
+import com.suning.ips.common.service.impl.IpsCommonServiceImpl;
+/**
+ * ${ObjCN} 
+ * @author 15060195
+ *
+ */
+
+@Service
+public class ${ObjName}ServiceImpl extends IpsCommonServiceImpl implements ${ObjName}Service{
+		
+		@Resource
+    	private DalClient dalClient;
+    	
+				
+}

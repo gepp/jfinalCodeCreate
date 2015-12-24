@@ -90,8 +90,11 @@
  			                // 提交表单成功后，释放hold，如果不释放hold，就变成了只能提交一次的表单
  			                me.holdSubmit(false);
  			                if(data.status=='success'){
- 			                	sAlert('当前操作成功');
- 			                	sOpen('${ contextpath}/${lowerCaseObjName}/list');
+ 			                	layer.alert('当前操作成功', {
+								shade:0,closeBtn: 0
+								}, function(){
+									window.location.href='${ contextpath}/${lowerCaseObjName}/list';
+								});
  			                }else{
  			                	sAlert('当前操作失败');
  			                }
