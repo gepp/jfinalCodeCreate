@@ -34,7 +34,7 @@
 </div> 
 <div id="tab1" class="tabson">
   <ul class="forminfo">
-  <form action="" method="POST"  id="${firstLowObjName}Form">
+  <form action="" method="post"  id="${firstLowObjName}Form">
 									 
 		#foreach (${element} in ${configBasicExtendInfoList})
 			#if(${element.IS_CREATE_DISPLAY}=='true')
@@ -90,10 +90,10 @@
  			                // 提交表单成功后，释放hold，如果不释放hold，就变成了只能提交一次的表单
  			                me.holdSubmit(false);
  			                if(data.status=='success'){
- 			                	layer.alert('当前操作成功', {
-								shade:0,closeBtn: 0
-								}, function(){
+ 			                	parent.layer.alert('当前操作成功', {
+								}, function(index){
 									window.location.href='${ contextpath}/${lowerCaseObjName}/list';
+									parent.layer.close(index);
 								});
  			                }else{
  			                	sAlert('当前操作失败');
