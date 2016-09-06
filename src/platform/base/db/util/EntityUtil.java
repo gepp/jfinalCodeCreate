@@ -289,7 +289,7 @@ public class EntityUtil {
 	  }else if(sqlType.equalsIgnoreCase("decimal") || sqlType.equalsIgnoreCase("numeric") 
 	    || sqlType.equalsIgnoreCase("real") || sqlType.equalsIgnoreCase("money") 
 	    || sqlType.equalsIgnoreCase("smallmoney")||sqlType.equalsIgnoreCase("double")){
-	   return "double";
+	   return "BigDecimal";
 	  }else if(sqlType.equalsIgnoreCase("varchar") || sqlType.equalsIgnoreCase("char") 
 	    || sqlType.equalsIgnoreCase("nvarchar") || sqlType.equalsIgnoreCase("nchar") 
 	    || sqlType.equalsIgnoreCase("text")||sqlType.equalsIgnoreCase("datetime")||sqlType.equalsIgnoreCase("time")||sqlType.equalsIgnoreCase("timestamp")){

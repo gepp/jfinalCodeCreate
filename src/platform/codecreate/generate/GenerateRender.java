@@ -44,11 +44,11 @@ public class GenerateRender extends Render {
 		Generator generator = new Generator();
 		String filedir = PlatformTool.getNowDateStr();
 		for (ConfigBasicInfo configBaseInfo : configBaseInfoList) {
-			generator.finalsimple(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
+			//generator.finalsimple(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 			//generator.generatorSSH(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 			//generator.generatorjavaskweb(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 			//generator.generatorArk(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
-			    
+		    generator.generatorsuning(configBaseInfo, filedir,outFilePath,(String)request.getAttribute("contextpath"));
 		}
 		PlatformTool.compressToZipFile(outFilePath+"\\"+filedir, outFilePath +"\\" +filedir+".zip");
 		PlatformTool.deleteDir(outFilePath+"\\"+filedir);

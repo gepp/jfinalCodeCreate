@@ -1,7 +1,7 @@
-package ${packagePath}.service;
+package ${packagePath}.intf.${lowerCaseObjName};
 import java.util.List;
 import java.util.Map;
-import ${packagePath}.entity.${ObjName};
+import ${packagePath}.entity.${lowerCaseObjName}.${ObjName}Entity;
 
 /**
  * ${ObjCN} 
@@ -9,13 +9,61 @@ import ${packagePath}.entity.${ObjName};
  *
  */
 public interface ${ObjName}Service{
+	 /**
+     * 
+     * 功能描述: <br>
+     * 〈功能详细描述〉
+     *  分页获取数量
+     * @return
+     * @see [相关类/方法](可选)
+     * @since [产品/模块版本](可选)
+     */
 	 
-	 Map<String,Object> invoiceMap=new HashMap<String,Object>();
-	 #foreach (${element} in ${configBasicExtendInfoList})
-	 	invoiceMap.put("${element.FIRSTLOW_ENGLISH_NAME}",invoice.get${element.FIRSTUP_ENGLISH_NAME}());
-	 #end
+	 public List<Map<String, Object>> get${ObjName}Count(Map<String, Object> map);
+	 
+	 /**
+     * 
+     * 功能描述: <br>
+     * 〈功能详细描述〉
+     *  分页获取list
+     * @return
+     * @see [相关类/方法](可选)
+     * @since [产品/模块版本](可选)
+     */
+    public List<${ObjName}Entity> getAll${ObjName}Page(Map<String, Object> map);
 	 
 	 
-	 	 
-	 
+	/**
+     * 
+     * 功能描述: <br>
+     * 〈功能详细描述〉
+     * 保存${ObjName}
+     * @param 
+     * @see [相关类/方法](可选)
+     * @since [产品/模块版本](可选)
+     */
+    public void save${ObjName}(List<${ObjName}Entity> ${firstLowObjName}List); 
+    
+    /**
+     * 
+     * 功能描述: <br>
+     * 〈功能详细描述〉
+     * 删除${ObjName}
+     * @param 
+     * @see [相关类/方法](可选)
+     * @since [产品/模块版本](可选)
+     */
+    public void delete${ObjName}ByCode(String code);
+    
+    /**
+     * 
+     * 功能描述: <br>
+     * 〈功能详细描述〉
+     * 获取${ObjName}
+     * @param 
+     * @see [相关类/方法](可选)
+     * @since [产品/模块版本](可选)
+     */
+    public Map<String, Object> get${ObjName}ByCode(String code);
+ 
 }

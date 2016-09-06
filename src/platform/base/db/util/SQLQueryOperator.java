@@ -104,6 +104,8 @@ public class SQLQueryOperator {
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException("不存在该数据库");
+		}finally{
+		    DBConnection.destroy(conn);
 		}
 		return tableNameList;
 	}

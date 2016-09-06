@@ -1,4 +1,4 @@
-package ${packagePath}.entity;
+package ${packagePath}.entity.${lowerCaseObjName};
 import java.util.Date;
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+
 /**
  * 
  *  ${ObjCN}  实体类<br> 
@@ -17,7 +18,7 @@ import java.math.BigDecimal;
  * @since [产品/模块版本] （可选）
  */
 @Entity(name = "${tableName}")
-public class ${ObjName} implements Serializable {
+public class ${ObjName}Entity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -40,7 +41,7 @@ public class ${ObjName} implements Serializable {
 		       @Id
 			   @GeneratedValue(strategy = GenerationType.AUTO)
 			   @Column(name = "ID")
-			   public Long getId(){
+			   public Integer getId(){
 			        return id;
 			   }
 			    /**
@@ -52,7 +53,7 @@ public class ${ObjName} implements Serializable {
 			     * @see [相关类/方法](可选)
 			     * @since [产品/模块版本](可选)
 			     */
-			    public void setId(Long id){
+			    public void setId(Integer id){
 			        this.id = id;
 			    }
 		      

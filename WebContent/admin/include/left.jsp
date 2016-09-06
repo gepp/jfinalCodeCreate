@@ -18,6 +18,7 @@
 				<li><a href="${contextpath }/dbconfiginfo">数据库配置管理</a></li>
 				<li><a href="${contextpath }/configbasicinfo">表配置管理</a></li>
 				<li><a href="${contextpath }/toUpdateSql">sql执行</a></li>
+				<li><a href="${contextpath }/toGenerateEclipse">eclipse配置生成</a></li>
 				<li class='dropdown'><a href="#" data-toggle="dropdown">产品管理</a>
 					<ul class="dropdown-menu">
 						<li><a href="#">产品列表</a></li>
